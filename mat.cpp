@@ -1,6 +1,6 @@
 #include "mat.hpp"
 #include <stdexcept>
-#include <iostream>    
+#include <iostream>
 
 namespace ariel
 {
@@ -10,18 +10,32 @@ namespace ariel
         {
             throw invalid_argument("Invalid syntax.");
         }
-            string ans = string("");
-            for (int i = 0; i < row; i++)
+        string ans = string("");
+        int plus = min(col, row);
+        char mymat[row][col];
+        char symball = sym1;
+        for (int i = 0; i < plus; i++)
+        {
+            for (int r = 0; r < row; r++)
             {
-                for (int j = 0; j < col; j++)
+                for (int c = 0; c < col; c++)
                 {
-                    ans += sym1;
-                    if (j == col - 1)
-                    {
-                        ans += '\n';
-                    }
+                    mymat[r][c] = symball;
+                    mymat[(row - 1) - i][c] = symball;
                 }
             }
-            return ans;
+        }
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < col; j++)
+            {
+                ans += sym1;
+                if (j == col - 1)
+                {
+                    ans += '\n';
+                }
+            }
+        }
+        return ans;
     }
 }
