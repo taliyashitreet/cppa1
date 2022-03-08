@@ -15,7 +15,6 @@ namespace ariel
         int plus = min(col, row)/2;
         char val=' ';
         vector< vector<char> > mymat(row, vector<char> (col, val)); 
-        //char mymat[row][col];
         char symball = sym1;
         for (int i = 0; i <= plus; i++)
         {
