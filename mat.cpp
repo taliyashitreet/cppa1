@@ -9,7 +9,7 @@ namespace ariel
     {
         if (col % 2 == 0 || row % 2 == 0 || col < 0 || row < 0)
         {
-            throw invalid_argument("Invalid syntax");
+            throw invalid_argument("Mat size is always odd");
         }
         string ans = string("");
         int plus = min(col, row)/2;
