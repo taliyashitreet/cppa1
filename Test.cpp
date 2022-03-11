@@ -57,17 +57,18 @@ TEST_CASE("is_palindrome")
             st = nospaces(mat(i, j, '@', '-'));
             if (isPalindrome(st))
             {
-                FAIL_CHECK("FAILD");
+               cout << "secces" << endl; 
             }
             else
             {
-               cout << "secces" << endl;
+               FAIL_CHECK("FAILD_PALINDROME");
             }
         }
     }
 }
 
-TEST_CASE("exeption")
+
+TEST_CASE("EVEN")
 {
     for (int i = 0; i < 100; i += 2)
     {
@@ -76,6 +77,12 @@ TEST_CASE("exeption")
             CHECK_THROWS(mat(i, j, '&', '#'));
         }
     }
+}
+TEST_CASE("Negative")
+{
+    CHECK_THROWS(mat(-7, 3, '&', '#'));
+    CHECK_THROWS(mat(5, -9, '&', '#'));
+    CHECK_THROWS(mat(-13, -3, '&', '#'));
 }
 
 TEST_CASE("in_addition")
