@@ -1,7 +1,6 @@
 #include "mat.hpp"
-#include <stdexcept>
-#include <iostream>
-#include <bits/stdc++.h> 
+int const low=33;
+int const high=126;
 
 namespace ariel
 {
@@ -10,6 +9,10 @@ namespace ariel
         if (col % 2 == 0 || row % 2 == 0 || col < 0 || row < 0)
         {
             throw invalid_argument("Mat size is always odd");
+        }
+        if (sym1<low || sym2<low || sym1>high || sym2>high)
+        {
+            throw invalid_argument("Not a valid symball");
         }
         string ans = string("");
         int plus = min(col, row)/2;

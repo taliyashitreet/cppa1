@@ -84,6 +84,17 @@ TEST_CASE("Negative")
     CHECK_THROWS(mat(5, -9, '&', '#'));
     CHECK_THROWS(mat(-13, -3, '&', '#'));
 }
+TEST_CASE("Invalid symball")
+{
+    char a=12;
+    char b='\0';
+    CHECK_THROWS(mat(7, 3, a, b));
+    a=20;
+    b=22;
+    CHECK_THROWS(mat(5, 9, a, b));
+    a=30;
+    CHECK_THROWS(mat(13, 3, a, b));
+}
 
 TEST_CASE("in_addition")
 {
